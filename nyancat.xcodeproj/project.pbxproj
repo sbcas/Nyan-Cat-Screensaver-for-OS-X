@@ -13,8 +13,8 @@
 		9C4D83F813C408320007DB86 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D83F713C408320007DB86 /* Cocoa.framework */; };
 		9C4D83FA13C408320007DB86 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D83F913C408320007DB86 /* ScreenSaver.framework */; };
 		9C4D840413C408320007DB86 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C4D840213C408320007DB86 /* InfoPlist.strings */; };
-		9C4D840713C408320007DB86 /* nyancatView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C4D840613C408320007DB86 /* nyancatView.h */; };
-		9C4D840913C408320007DB86 /* nyancatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D840813C408320007DB86 /* nyancatView.m */; };
+		9C4D840713C408320007DB86 /* NyanCatView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C4D840613C408320007DB86 /* NyanCatView.h */; };
+		9C4D840913C408320007DB86 /* NyanCatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D840813C408320007DB86 /* NyanCatView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		9C4D840113C408320007DB86 /* nyancat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nyancat-Info.plist"; sourceTree = "<group>"; };
 		9C4D840313C408320007DB86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C4D840513C408320007DB86 /* nyancat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nyancat-Prefix.pch"; sourceTree = "<group>"; };
-		9C4D840613C408320007DB86 /* nyancatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nyancatView.h; sourceTree = "<group>"; };
-		9C4D840813C408320007DB86 /* nyancatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nyancatView.m; sourceTree = "<group>"; };
+		9C4D840613C408320007DB86 /* NyanCatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NyanCatView.h; sourceTree = "<group>"; };
+		9C4D840813C408320007DB86 /* NyanCatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NyanCatView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 		9C4D83FF13C408320007DB86 /* nyancat */ = {
 			isa = PBXGroup;
 			children = (
-				9C4D840613C408320007DB86 /* nyancatView.h */,
-				9C4D840813C408320007DB86 /* nyancatView.m */,
+				9C4D840613C408320007DB86 /* NyanCatView.h */,
+				9C4D840813C408320007DB86 /* NyanCatView.m */,
 				9C4D840013C408320007DB86 /* Supporting Files */,
 				9C42251413CE8523007F00A9 /* NyanStarData.h */,
 				9C42251513CE8523007F00A9 /* NyanStarData.m */,
@@ -114,7 +114,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C4D840713C408320007DB86 /* nyancatView.h in Headers */,
+				9C4D840713C408320007DB86 /* NyanCatView.h in Headers */,
 				9C42251613CE8523007F00A9 /* NyanStarData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +147,15 @@
 		9C4D83E913C408320007DB86 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 1120;
 			};
 			buildConfigurationList = 9C4D83EC13C408320007DB86 /* Build configuration list for PBXProject "nyancat" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 9C4D83E713C408320007DB86;
 			productRefGroup = 9C4D83F513C408320007DB86 /* Products */;
@@ -193,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C4D840913C408320007DB86 /* nyancatView.m in Sources */,
+				9C4D840913C408320007DB86 /* NyanCatView.m in Sources */,
 				9C42251713CE8523007F00A9 /* NyanStarData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,17 +216,40 @@
 		9C4D840A13C408320007DB86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
@@ -237,14 +261,36 @@
 		9C4D840B13C408320007DB86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = macosx;
@@ -256,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -264,6 +311,7 @@
 				GCC_PREFIX_HEADER = "nyancat/nyancat-Prefix.pch";
 				INFOPLIST_FILE = "nyancat/nyancat-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = us.zethrae.nyancatscreensaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};
@@ -273,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -281,6 +330,7 @@
 				GCC_PREFIX_HEADER = "nyancat/nyancat-Prefix.pch";
 				INFOPLIST_FILE = "nyancat/nyancat-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = us.zethrae.nyancatscreensaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};

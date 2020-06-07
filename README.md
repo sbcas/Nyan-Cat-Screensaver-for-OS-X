@@ -1,5 +1,5 @@
-# Nyan-Cat-Screensaver-for-OS-X
-An homage to the famous Nyan Cat created by www.prguitarman.com/
+# Nyan Cat macOS Screensaver
+## Updated for 64 bit *Cat*alina.
 
-This is something I wrote just for fun, you can download the actual screensave here:
-http://nyancatsaves.com/
+An homage to the famous Nyan Cat created by www.prguitarman.com/
+Forked from 32 bit version: https://github.com/vinaytota/Nyan-Cat-Screensaver-for-OS-X

@@ -1,14 +1,12 @@
 //
-//  nyancatView.m
-//  nyancat
-//
-//  Created by Vinay Tota on 7/5/11.
+// forked from: https://github.com/vinaytota/Nyan-Cat-Screensaver-for-OS-X
+// 64 bit / *cat*alina compatible version: https://github.com/zethraeus/Nyan-Cat-Screensaver-for-OS-X
 //
 
-#import "nyancatView.h"
+#import "NyanCatView.h"
 #import "NyanStarData.h"
 
-@implementation nyancatView
+@implementation NyanCatView
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
@@ -24,7 +22,7 @@
         
         NSBundle* bundle = [NSBundle bundleForClass:[self class]];
         NSString* envsPListPath = [bundle pathForResource:@"cat" ofType:@"gif"];
-        displayImage = [[[NSImage alloc] initWithContentsOfFile:envsPListPath] autorelease];
+        displayImage = [[NSImage alloc] initWithContentsOfFile:envsPListPath];
         
         // Thanks to http://blog.pcitron.fr/2010/12/14/play-an-animated-gif-with-an-ikimageview/ 
         // for example code on how to do this
@@ -46,7 +44,7 @@
                     // set the current frame
                     [bitmapRep setProperty:NSImageCurrentFrame withValue:[NSNumber numberWithInt:i]];
                     CGImageRef img = [bitmapRep CGImage];
-                    [gifFrames addObject:(id)img];
+                    [gifFrames addObject:(__bridge id)img];
                 }
                 
                 // stops at the first valid representation
@@ -59,10 +57,7 @@
          * Init star data
          *
          **/
-        int numNyanStars = 15;
-        if(isPreview) {
-            numNyanStars = 3;
-        }
+        int numNyanStars = 5 + arc4random() % 15;
         
         nyanStars = [[NSMutableArray alloc] init];
         for(int x = 0; x < numNyanStars; x++) {
@@ -106,7 +101,7 @@
     
     
     //Figure out where to draw nyancat 
-    CGImageRef imageRef = (CGImageRef) gifFrames[gifFrameNumber];
+    CGImageRef imageRef = (__bridge CGImageRef) gifFrames[gifFrameNumber];
 
     NSImage* currentFrame = [[NSImage alloc] initWithCGImage:imageRef size:NSZeroSize];
 
@@ -152,10 +147,8 @@
     // draw kitty
     [currentFrame drawInRect: destRect
              fromRect: NSZeroRect
-            operation: NSCompositeSourceOver
+            operation: NSCompositingOperationSourceOver
              fraction: 1.0];
-    
-    [currentFrame release];
 }
 
 - (void)drawBackground {
