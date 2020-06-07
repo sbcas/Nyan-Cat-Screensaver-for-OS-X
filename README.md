@@ -1,9 +1,12 @@
 # Nyan Cat macOS Screensaver
-## Updated for 64 bit **Cat**alina.
+
+Compatible with 64 bit *Cat*-alina.
 
 ![Nyan Cat Preview](https://raw.githubusercontent.com/zethraeus/Nyan-Cat-Screensaver-for-OS-X/master/nyancatpreview.gif)
 
-## [Download](https://raw.githubusercontent.com/zethraeus/Nyan-Cat-Screensaver-for-OS-X/master/nyancat.saver.zip)
+### [Download](https://raw.githubusercontent.com/zethraeus/Nyan-Cat-Screensaver-for-OS-X/master/nyancat.saver.zip)
+
+___
 
 An homage to the famous Nyan Cat created by www.prguitarman.com/
 
